@@ -1,0 +1,32 @@
+
+!hello // fn hello(a, b) -> a + b
+
+push:rbp
+mov:rbp:rsp
+
+// [rbp] is old rbp
+// [rbp-1] is ip
+// [rbp-2] is arg 2 
+
+mov:r1:[rbp-2]
+mov:r2:[rbp-3]
+add:r1:r2
+mov:r3:r0
+pop:rbp
+mov:rsp:rbp
+ret
+
+!start
+
+// call hello
+
+
+out:"Please enter your name"
+out:58
+out:" "
+in:r0
+
+out:"Hello, "
+out:r0
+
+exit
